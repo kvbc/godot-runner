@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://Scripts/AL_World/Environment/Coin.gd" id="1_6mowc"]
+[ext_resource type="Texture2D" uid="uid://btaqegv5fofh4" path="res://Assets/UI/Gold/goldCoin1.png" id="1_opk5f"]
+[ext_resource type="Texture2D" uid="uid://hsg6uj6gwrxr" path="res://Assets/UI/Gold/goldCoin2.png" id="2_oqfpq"]
+[ext_resource type="Texture2D" uid="uid://x1r2ghvm2vt" path="res://Assets/UI/Gold/goldCoin3.png" id="3_bip80"]
+[ext_resource type="Texture2D" uid="uid://dkdj8e85e1yq3" path="res://Assets/UI/Gold/goldCoin4.png" id="4_y12jf"]
+[ext_resource type="Texture2D" uid="uid://ducbnt8xgn31v" path="res://Assets/UI/Gold/goldCoin5.png" id="5_lmvia"]
+[ext_resource type="Texture2D" uid="uid://cx2i8kilf1xyq" path="res://Assets/UI/Gold/goldCoin6.png" id="6_kperc"]
+[ext_resource type="Texture2D" uid="uid://fm0gdf3082c5" path="res://Assets/UI/Gold/goldCoin7.png" id="7_1q274"]
+[ext_resource type="Texture2D" uid="uid://p3uxkxw5gda4" path="res://Assets/UI/Gold/goldCoin8.png" id="8_i1muy"]
+[ext_resource type="Texture2D" uid="uid://otycokksuhfl" path="res://Assets/UI/Gold/goldCoin9.png" id="9_ocuki"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7teyg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_opk5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oqfpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bip80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y12jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lmvia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kperc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1q274")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i1muy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ocuki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Coin" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_6mowc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7teyg")

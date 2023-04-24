@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/AL_UI/Shop.gd" id="1_p0yio"]
+[ext_resource type="Texture2D" uid="uid://cbpjir5hluigm" path="res://Assets/UI/wrench.png" id="2_e0en6"]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_p0yio")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vbox" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="top" type="Control" parent="Control/vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="bot" type="Control" parent="Control/vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="bg" type="ColorRect" parent="Control/vbox/bot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="margin" type="MarginContainer" parent="Control/vbox/bot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="vbox" type="VBoxContainer" parent="Control/vbox/bot/margin"]
+layout_mode = 2
+
+[node name="item" type="Control" parent="Control/vbox/bot/margin/vbox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="bg" type="ColorRect" parent="Control/vbox/bot/margin/vbox/item"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="margin" type="MarginContainer" parent="Control/vbox/bot/margin/vbox/item"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="hbox" type="HBoxContainer" parent="Control/vbox/bot/margin/vbox/item/margin"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="name" type="Label" parent="Control/vbox/bot/margin/vbox/item/margin/hbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Name"
+
+[node name="sep" type="ColorRect" parent="Control/vbox/bot/margin/vbox/item/margin/hbox"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="info" type="Label" parent="Control/vbox/bot/margin/vbox/item/margin/hbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Info"
+
+[node name="sep2" type="ColorRect" parent="Control/vbox/bot/margin/vbox/item/margin/hbox"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="btn" type="Button" parent="Control/vbox/bot/margin/vbox/item/margin/hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("2_e0en6")
+icon_alignment = 1

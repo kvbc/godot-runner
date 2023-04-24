@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c532vmv28lu6g"]
+
+[ext_resource type="Script" path="res://Scripts/AL_World/AL_World.gd" id="1_nfoot"]
+[ext_resource type="Script" path="res://Scripts/AL_World/Player.gd" id="2_h3x8w"]
+[ext_resource type="Texture2D" uid="uid://u45t6sihkyup" path="res://Assets/mrlocutorface2.png" id="3_35sgo"]
+[ext_resource type="Texture2D" uid="uid://cfqqr3aslvev6" path="res://Assets/Weapons/glock.svg" id="4_d0qnr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c85iu"]
+radius = 53.1507
+
+[node name="AL_World" type="Node2D"]
+script = ExtResource("1_nfoot")
+
+[node name="Envs" type="Node2D" parent="."]
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(267, 838)
+script = ExtResource("2_h3x8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_35sgo")
+
+[node name="Weapon" type="Node2D" parent="Player"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Weapon"]
+position = Vector2(80, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_d0qnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_c85iu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(267, 488)

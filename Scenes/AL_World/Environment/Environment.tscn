@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Scripts/AL_World/Environment/Environment.gd" id="1_q0jyf"]
+[ext_resource type="Texture2D" uid="uid://bpqyv5ibegc38" path="res://Assets/road_0.png" id="2_rw50h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4xto"]
+size = Vector2(55, 967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yiff"]
+size = Vector2(51, 964)
+
+[node name="Environment" type="Node2D"]
+script = ExtResource("1_q0jyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(269.5, 478.629)
+scale = Vector2(0.500926, 0.500656)
+texture = ExtResource("2_rw50h")
+
+[node name="VisNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(273.5, 475.5)
+scale = Vector2(27.35, 47.95)
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(17.5, 473.5)
+shape = SubResource("RectangleShape2D_u4xto")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(491, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(22.5, 472)
+shape = SubResource("RectangleShape2D_6yiff")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="."]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Scripts/AL_UI/AL_UI.gd" id="1_47xrn"]
+[ext_resource type="Script" path="res://Scripts/AL_UI/Nav.gd" id="1_ju4do"]
+[ext_resource type="PackedScene" path="res://Scenes/AL_UI/Coin.tscn" id="2_4hrh5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aprjm"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="AL_UI" type="CanvasLayer"]
+script = ExtResource("1_47xrn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="nav" type="Control" parent="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_ju4do")
+
+[node name="margin" type="MarginContainer" parent="Control/nav"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="vbox" type="VBoxContainer" parent="Control/nav/margin"]
+layout_mode = 2
+alignment = 2
+
+[node name="gold" type="HBoxContainer" parent="Control/nav/margin/vbox"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Coin" parent="Control/nav/margin/vbox/gold" instance=ExtResource("2_4hrh5")]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/nav/margin/vbox/gold"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "0"
+vertical_alignment = 1
+
+[node name="lvl" type="Label" parent="Control/nav/margin/vbox"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Level 1"
+vertical_alignment = 1
+
+[node name="lvlbar" type="Panel" parent="Control/nav/margin/vbox"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aprjm")
+
+[node name="coins" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
